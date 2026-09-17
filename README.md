@@ -1,6 +1,6 @@
 ## About
 
-NoLock is an addon for [Windower 4](http://www.windower.net) which enables instant feedback for bids when using the auction house.
+NoLock is an addon for [Windower 4](http://www.windower.net) which remove animation locking ONLY when engaging/disengaging monsters.
 
 The same functionality can be found in the [NoLock](https://github.com/WinterSolstice8/nolock) for [Ashita v4](https://www.ashitaxi.com).
 
