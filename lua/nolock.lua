@@ -10,6 +10,7 @@ require('memorylib')
 local nolock = { };
 nolock.pattern = '66FF81????????66C781????????0807C3'
 nolock.pointer = memorylib.findPattern('FFXiMain.dll', nolock.pattern)
+nolock.backup = 0
 
 local function msg(s)
     local txt = '[NoLock] ' .. s;
@@ -22,16 +23,14 @@ windower.register_event('load', function()
         return;
     end
 
-    for i = 0,6
-    do
-        memorylib.write_uint8(nolock.pointer + i, 0x90);
-    end
-
+    nolock.backup = memorylib.read(nolock.pointer, 7)
+    memorylib.write(nolock.pointer, '90909090909090')
     msg('Function patched; should no longer be animation locked during engage/disengage');
 end)
 
 windower.register_event('unload', function()
-	if (nolock.pointer == 0) then
-        -- TODO: Write back original values
+    if (nolock.pointer ~= 0 and nolock.backup ~= 0) then
+        memorylib.write(nolock.pointer, nolock.backup)
+        msg('Orignal engage function restored.')
     end
 end)
