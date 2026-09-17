@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 set MEMORYLIB_DIR="memorylib"
-set ADDON_NAME="instantah"
+set ADDON_NAME="nolock"
 
 echo === Building MemoryLib ===
 
