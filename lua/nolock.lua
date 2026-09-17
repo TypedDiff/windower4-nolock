@@ -1,6 +1,6 @@
 _addon.name = 'nolock'
 _addon.author = 'TypedDiff'
-_addon.version = '0.9.0'
+_addon.version = '1.0.0'
 _addon.commands = { }
 
 local addon_path = windower.addon_path:gsub('\\', '/')	
